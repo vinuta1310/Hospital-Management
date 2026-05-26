@@ -17,6 +17,9 @@
         <td> <%= patient.name %> </td>
         <td> <%= patient.age %> </td>
         <td> <%= patient.gender %> </td>
+        <td>
+          <%= link_to "Show Patient", patient_path(patient)%>
+        </td>
       </tr>
     <% end %>
   </tbody>
