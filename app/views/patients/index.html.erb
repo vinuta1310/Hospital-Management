@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Hospital Management System" %>
+
+<h1>Patient</h1>
+<table border= 1>
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Age </th>
+      <th> Gender </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td> <%= patient.name %> </td>
+        <td> <%= patient.age %> </td>
+        <td> <%= patient.gender %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
