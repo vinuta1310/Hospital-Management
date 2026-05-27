@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Created Patient CRUD manually
+--First created migrations
+--Run the migrations
+--Checked with the verison change and table updated in schema after running migration
+--Added routes for the CRUD paths
+--Added model for the data validations
+--Added contoller for index, show, new, create, edit, update, destroy actions
+--Added views for the particular actions
