@@ -21,6 +21,9 @@ class PatientsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   private
 
   def set_patient
