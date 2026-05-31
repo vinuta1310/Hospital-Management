@@ -1,0 +1,25 @@
+<%= form_with model: @doctor do |f| %>
+  <% if @doctor.errors.any? %>
+    <div style= "color: red">
+      <ul>
+        <% @doctor.errors.full_messages.each do |error| %>
+          <li> <%= error %> </li>
+        <% end %> 
+      </ul>
+  <% end %>
+
+
+  <div>
+    <%= f.label :doctor_name %> <br>
+    <%= f.text_field :doctor_name, style: "width: 300px" %>
+  </div>
+
+  <div>
+    <%= f.label :specialization %> <br>
+    <%= f.text_field :specialization , style: "width: 300px" %>
+  </div>
+
+  <div style = "marigin-top:8px">
+    <%= f.submit %>
+  </div
+<% end %>
