@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:show, :edit, :update] 
+  before_action :set_doctor, only: [:show, :edit, :update, :destroy] 
   def index
     @doctors = Doctor.all
   end
@@ -29,6 +29,11 @@ class DoctorsController < ApplicationController
     else
       render :edit, status: :unprocessable_content
     end
+  end
+
+  def destroy
+    @doctor.destroy
+    redirect_to doctors_path, notice: "Doctor deleted successfully"
   end
 
   private
