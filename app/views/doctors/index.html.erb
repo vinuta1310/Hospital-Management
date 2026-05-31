@@ -1,0 +1,20 @@
+<% content_for :title, "Hospital Management System" %>
+
+<h1>Doctor</h1>
+
+<table border= 1>
+  <thead>
+    <tr>
+      <th> Doctor's Name </th>
+      <th> Specialization </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td> <%= doctor.doctor_name %> </td>
+        <td> <%= doctor.specialization %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
