@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:show] 
+  before_action :set_doctor, only: [:show, :edit, :update] 
   def index
     @doctors = Doctor.all
   end
@@ -20,7 +20,19 @@ class DoctorsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @doctor.update(set_doctor_params)
+      redirect_to edit_doctor_path(@doctor), notice: "Updated successfully"
+    else
+      render :edit, status: :unprocessable_content
+    end
+  end
+
   private
+
   def set_doctor
     @doctor = Doctor.find(params[:id])
   end
