@@ -14,6 +14,9 @@
       <tr>
         <td> <%= doctor.doctor_name %> </td>
         <td> <%= doctor.specialization %> </td>
+        <td>
+          <%= link_to "Show", doctor_path(doctor) %>
+          </td>
       </tr>
     <% end %>
   </tbody>
