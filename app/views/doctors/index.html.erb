@@ -21,7 +21,8 @@
         <td> <%= doctor.specialization %> </td>
         <td>
           <%= link_to "Show", doctor_path(doctor) %>
-          </td>
+          <%= link_to "Edit", edit_doctor_path(doctor) %>
+        </td>
       </tr>
     <% end %>
   </tbody>

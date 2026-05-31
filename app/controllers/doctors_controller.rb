@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:show] 
+  before_action :set_doctor, only: [:show, :edit] 
   def index
     @doctors = Doctor.all
   end
@@ -18,6 +18,9 @@ class DoctorsController < ApplicationController
     else
       render :new, status: :unprocessable_content
     end
+  end
+
+  def edit
   end
 
   private
