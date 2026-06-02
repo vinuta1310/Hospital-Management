@@ -23,11 +23,6 @@
     <%= f.label :gender %> <br>
     <%= f.text_field :gender, style: "width: 300px" %>
   </div>
-
-  <div>
-    <%= f.label :doctor_id %> <br>
-    <%= f.collection_select :doctor_id, @doctors, :id, :doctor_name, {prompt: "Select Doctor", style: "width: 300px"} %>
-  </div>
   
   <div style = "marigin-top:8px">
     <%= f.submit %>
