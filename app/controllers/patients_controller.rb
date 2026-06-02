@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, except: [ :index, :new, :create]
+  before_action :load_doctor, only: [ :new, :edit]
 
   def index
     @patients = Patient.all
@@ -43,7 +44,11 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
-  def set_patient_params
-    params.require(:patient).permit(:name, :age, :gender)
+  def set_patient_params #strong param
+    params.require(:patient).permit(:name, :age, :gender, :doctor_id)
+  end
+
+  def load_doctor
+    @doctors = Doctor.all
   end
 end
