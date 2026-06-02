@@ -1,0 +1,17 @@
+<h1>Appointments</h1>
+
+<table border="1">
+  <tr>
+    <th>Doctor</th>
+    <th>Patient</th>
+    <th>Reason</th>
+  </tr>
+
+  <% @appointments.each do |appointment| %>
+    <tr>
+      <td><%= appointment.doctor.doctor_name %></td>
+      <td><%= appointment.patient.name %></td>
+      <td><%= appointment.reason %></td>
+    </tr>
+  <% end %>
+</table>
