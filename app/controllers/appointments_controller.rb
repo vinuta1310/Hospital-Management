@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show, :edit, :update]
+  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   def index
     @appointments = Appointment.includes(:doctor, :patient)
@@ -38,6 +38,11 @@ class AppointmentsController < ApplicationController
       @doctors = Doctor.all
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @appointment.destroy
+    redirect_to appointments_path, notice: "Appointment deleted successfully"
   end
 
   private

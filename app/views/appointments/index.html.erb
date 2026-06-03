@@ -23,6 +23,7 @@
         <td>
           <%= link_to "Show", appointment_path(appointment) %>
           <%= link_to "Edit", edit_appointment_path(appointment) %>
+          <%= link_to "Delete", appointment_path(appointment), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </td>
       </tr>
     <% end %>
