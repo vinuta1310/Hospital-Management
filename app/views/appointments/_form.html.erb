@@ -10,13 +10,13 @@
   <% end %>
 
   <div>
-    <%= f.label :name %> <br>
-    <%= f.text_field :name %>
+    <%= f.label :patient_id %> <br>
+    <%= f.collection_select :patient_id, @patients, :id, :name, prompt: "Select Patient" %>
   <div>
 
   <div>
-    <%= f.label :doctor_name %> <br>
-    <%= f.text_field :doctor_name %>
+    <%= f.label :doctor_id %> <br>
+    <%= f.collection_select :doctor_id, @doctors, :id, :doctor_name, prompt: "Select Doctor" %>
   <div>
 
   <div>
