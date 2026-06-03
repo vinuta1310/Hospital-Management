@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show]
+  before_action :set_appointment, only: [:show, :edit, :update]
 
   def index
     @appointments = Appointment.includes(:doctor, :patient)
@@ -22,6 +22,21 @@ class AppointmentsController < ApplicationController
       @patients = Patient.all
       @doctors = Doctor.all
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @patients = Patient.all
+    @doctors = Doctor.all
+  end
+
+  def update
+    if @appointment.update(set_appointment_params)
+      redirect_to appointments_path, notice: "Appointment updated successfully"
+    else
+      @patients = Patient.all
+      @doctors = Doctor.all
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -22,6 +22,7 @@
         <td><%= appointment.reason %></td>
         <td>
           <%= link_to "Show", appointment_path(appointment) %>
+          <%= link_to "Edit", edit_appointment_path(appointment) %>
         </td>
       </tr>
     <% end %>
