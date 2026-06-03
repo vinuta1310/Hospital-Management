@@ -1,17 +1,27 @@
+<% content_for :title, "Hospital Management System" %>
+
 <h1>Appointments</h1>
 
-<table border="1">
-  <tr>
-    <th>Doctor</th>
-    <th>Patient</th>
-    <th>Reason</th>
-  </tr>
+<%= link_to "New Appointment", new_appointment_path %>
 
-  <% @appointments.each do |appointment| %>
+<table border="1">
+  <thead>
     <tr>
-      <td><%= appointment.doctor.doctor_name %></td>
-      <td><%= appointment.patient.name %></td>
-      <td><%= appointment.reason %></td>
+      <th>Doctor</th>
+      <th>Patient</th>
+      <th>Reason</th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.doctor.doctor_name %></td>
+        <td><%= appointment.patient.name %></td>
+        <td><%= appointment.reason %></td>
+        <td>
+          <%= link_to "Show", appointment_path(appointment) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

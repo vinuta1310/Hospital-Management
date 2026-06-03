@@ -1,0 +1,30 @@
+<%= form_with model: @appointment do |f| %>
+  <% if @appointment.errors.any? %>
+    <div style= "color: red">
+      <ul>
+        <% @appointment.errors.full_messages.each do |error| %>
+          <li> <%= error %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %>
+  <div>
+
+  <div>
+    <%= f.label :doctor_name %> <br>
+    <%= f.text_field :doctor_name %>
+  <div>
+
+  <div>
+    <%= f.label :reason %> <br>
+    <%= f.text_field :reason %>
+  <div>
+
+  <div style = "margin-top:8px">
+    <%= f.submit %>
+  </div>
+<% end %>
