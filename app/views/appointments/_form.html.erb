@@ -1,0 +1,30 @@
+<%= form_with model: @appointment do |f| %>
+  <% if @appointment.errors.any? %>
+    <div style= "color: red">
+      <ul>
+        <% @appointment.errors.full_messages.each do |error| %>
+          <li> <%= error %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :patient_id %> <br>
+    <%= f.collection_select :patient_id, @patients, :id, :name, prompt: "Select Patient" %>
+  <div>
+
+  <div>
+    <%= f.label :doctor_id %> <br>
+    <%= f.collection_select :doctor_id, @doctors, :id, :doctor_name, prompt: "Select Doctor" %>
+  <div>
+
+  <div>
+    <%= f.label :reason %> <br>
+    <%= f.text_field :reason %>
+  <div>
+
+  <div style = "margin-top:8px">
+    <%= f.submit %>
+  </div>
+<% end %>
