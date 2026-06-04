@@ -1,8 +1,18 @@
+<h1><%= @patient.name %></h1>
+
 <h2> Patients Details</h2>
 
 <p><strong>Name : </strong> <%= @patient.name %> </p>
 <p><strong>Age : </strong> <%= @patient.age %> </p>
 <p><strong>Gender : </strong> <%= @patient.gender %> </p>
 
+<h2>Appointments</h2>
+
+<ul>
+  <% @patient.appointments.each do |appointment| %>
+    <li>Doctor : <%= appointment.doctor.doctor_name %>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to "Back", patients_path %>
